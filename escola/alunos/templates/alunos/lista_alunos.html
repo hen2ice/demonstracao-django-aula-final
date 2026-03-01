@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Alunos</title>
+</head>
+<body>
+    <h1>Alunos Cadastrados</h1>
+
+    <ol>
+        {% for aluno in alunos %}
+            <li>{{ aluno.nome }} - {{ aluno.idade }} anos</li>
+            <h4>
+                <button>
+                    <a href="{% url 'detalhe_alunos' aluno.id %}">Ver detalhes</a>
+                </button>
+            </h4>
+            <hr>
+        {% endfor %}
+    </ol>
+
+    <h2>
+        <button>
+        <a href="{% url 'home' %}">Retornar a home</a>
+        </button>
+        <button>
+        <a href="{% url 'lista_alunos' %}novo">Cadastrar aluno</a>
+        </button>
+    </h2>
+</body>
+</html>
